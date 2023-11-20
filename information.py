@@ -34,7 +34,7 @@ for filename in os.listdir(folder_path1):
     file_path1 = os.path.join(folder_path1, filename)
     
     # 获取文件大小
-    file_size = os.path.getsize(file_path1) * 8  # 转换为bits
+    file_size = os.path.getsize(file_path1)
     
     # 在第二个文件夹中找到对应的.png文件并获取其尺寸和像素总值
     base_filename, file_extension = os.path.splitext(filename)
@@ -51,7 +51,7 @@ for filename in os.listdir(folder_path1):
             pixel_count = width * height
             
         # 计算BPP
-        bpp = file_size / pixel_count
+        bpp = file_size *8 / pixel_count
 
         # 计算PSNR
         original = imread(file_path2)
